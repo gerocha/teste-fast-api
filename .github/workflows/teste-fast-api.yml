@@ -20,6 +20,8 @@ jobs:
     steps:
     - name: Lint
       uses: astral-sh/ruff-action@v3
+      with:
+        src: "./stock"
     - name: Test with pytest
       run: |
         pytest
