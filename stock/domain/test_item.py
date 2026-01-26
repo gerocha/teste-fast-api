@@ -55,3 +55,17 @@ def test_item_subtraction_invalid():
         pass
     else:
         assert False, "Expected NotImplementedError for invalid subtraction type"
+
+def test_item_subtraction_exceeding_stock():
+    item = Item(
+        name="Laptop",
+        description="A high-performance laptop",
+        price=999.99,
+        quantity_in_stock=10
+    )
+    try:
+        updated_item = item - 15
+    except ValueError as e:
+        assert str(e) == "Cannot subtract more than available stock."
+    else:
+        assert False, "Expected ValueError for exceeding stock subtraction"

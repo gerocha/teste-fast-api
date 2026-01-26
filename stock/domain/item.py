@@ -17,6 +17,10 @@ class Item:
     def __sub__(self, other):
         if not isinstance(other, int):
             raise NotImplementedError
+
+        if other > self.quantity_in_stock:
+            raise ValueError("Cannot subtract more than available stock.")
+
         return Item(
                 self.name,
                 self.description,
