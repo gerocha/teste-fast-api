@@ -50,7 +50,7 @@ def test_item_subtraction_invalid():
         quantity_in_stock=10
     )
     try:
-        updated_item = item - "3"
+        item - "3"
     except NotImplementedError:
         pass
     else:
@@ -64,7 +64,7 @@ def test_item_subtraction_exceeding_stock():
         quantity_in_stock=10
     )
     try:
-        updated_item = item - 15
+        item - 15
     except ValueError as e:
         assert str(e) == "Cannot subtract more than available stock."
     else:
