@@ -1,7 +1,7 @@
 from .item import Item
 
 
-def test_create_itel():
+def test_create_item():
     item = Item(
         name="Laptop",
         description="A high-performance laptop",
