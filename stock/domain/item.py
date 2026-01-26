@@ -9,6 +9,10 @@ class Item:
     price: Price
     quantity_in_stock: int
 
+    @property
+    def is_in_stock(self) -> bool:
+        return self.quantity_in_stock > 0
+
     def __gt__(self, other):
         if not isinstance(other, Item):
             raise NotImplementedError

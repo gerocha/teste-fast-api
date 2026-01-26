@@ -69,3 +69,20 @@ def test_item_subtraction_exceeding_stock():
         assert str(e) == "Cannot subtract more than available stock."
     else:
         assert False, "Expected ValueError for exceeding stock subtraction"
+
+def test_item_is_in_stock():
+    item = Item(
+        name="Laptop",
+        description="A high-performance laptop",
+        price=999.99,
+        quantity_in_stock=5
+    )
+    assert item.is_in_stock is True
+
+    item_out_of_stock = Item(
+        name="Laptop",
+        description="A high-performance laptop",
+        price=999.99,
+        quantity_in_stock=0
+    )
+    assert item_out_of_stock.is_in_stock is False
