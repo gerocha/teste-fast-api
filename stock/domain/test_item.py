@@ -12,3 +12,46 @@ def test_create_item():
     assert item.description == "A high-performance laptop"
     assert item.price == 999.99
     assert item.quantity_in_stock == 10
+
+def test_item_comparison():
+    item1 = Item(
+        name="Laptop",
+        description="A high-performance laptop",
+        price=999.99,
+        quantity_in_stock=10
+    )
+    item2 = Item(
+        name="Tablet",
+        description="A lightweight tablet",
+        price=499.99,
+        quantity_in_stock=20
+    )
+    assert item1 > item2
+
+
+def test_item_subtraction():
+    item = Item(
+        name="Laptop",
+        description="A high-performance laptop",
+        price=999.99,
+        quantity_in_stock=10
+    )
+    updated_item = item - 3
+    assert updated_item.quantity_in_stock == 7
+    assert updated_item.name == item.name
+    assert updated_item.description == item.description
+    assert updated_item.price == item.price
+
+def test_item_subtraction_invalid():
+    item = Item(
+        name="Laptop",
+        description="A high-performance laptop",
+        price=999.99,
+        quantity_in_stock=10
+    )
+    try:
+        updated_item = item - "3"
+    except NotImplementedError:
+        pass
+    else:
+        assert False, "Expected NotImplementedError for invalid subtraction type"
