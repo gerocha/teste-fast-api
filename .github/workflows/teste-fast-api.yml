@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: ghcr.io/astral-sh/uv:debian-slim
+    - uses: astral-sh/uv:debian-slim
     - name: Lint
       uses: astral-sh/ruff-action@v3
       with:
