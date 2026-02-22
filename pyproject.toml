@@ -1,7 +1,7 @@
 [project]
 name = "teste-fast-api"
 version = "0.1.0"
-description = "Add your description here"
+description = "Projeto de estudo, a ideia é fazer um sistema de estoque"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [

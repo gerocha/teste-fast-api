@@ -18,10 +18,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - uses: ghcr.io/astral-sh/uv:debian-slim
     - name: Lint
       uses: astral-sh/ruff-action@v3
       with:
         src: "."
+    - name: Install deps
+      run: uv sync
     - name: Test with pytest
       run: |
-        pytest
+        uv run pytest
