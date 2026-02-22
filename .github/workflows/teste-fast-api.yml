@@ -18,6 +18,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - uses: actions/checkout@v7
     - name: Install uv
       uses: astral-sh/setup-uv@v7
     - name: Lint
@@ -25,9 +26,9 @@ jobs:
       with:
         src: "."
     - name: Install deps
-      run: uv sync
       with:
         src: "."
+      run: uv sync
     - name: Test with pytest
       run: |
         uv run pytest
