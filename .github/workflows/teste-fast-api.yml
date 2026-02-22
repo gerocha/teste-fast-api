@@ -27,6 +27,7 @@ jobs:
         src: "."
     - name: Install deps
       run: uv sync
+      run: uv run pip install -e .
     - name: Test with pytest
       run: |
         uv run pytest
