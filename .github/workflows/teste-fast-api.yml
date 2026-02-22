@@ -18,7 +18,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: astral-sh/uv@debian-slim
+    - name: Install uv
+      uses: astral-sh/setup-uv@v7
     - name: Lint
       uses: astral-sh/ruff-action@v3
       with:
