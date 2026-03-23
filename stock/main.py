@@ -1,7 +1,6 @@
 from fastapi import FastAPI
+from stock.routers import item
 
 app = FastAPI()
 
-@app.get("/")
-async def read_root():
-    return {"Hello": "World"}
+app.include_router(item.router)
