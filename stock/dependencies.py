@@ -1,13 +1,15 @@
 from typing import Annotated
 
 from fastapi import Depends
-from sqlalchemy import Connection
-from stock.infra.db import engine
+from sqlalchemy.orm import Session
+from stock.infra.db import SessionLocal
 
 
 def get_connection():
-    with engine.connect() as conn:
-        yield conn
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
 
-
-SessionDep = Annotated[Connection, Depends(get_connection)]
+SessionDep = Annotated[Session, Depends(get_connection)]

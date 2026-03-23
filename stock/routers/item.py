@@ -11,5 +11,5 @@ router = APIRouter(
 
 
 @router.post("/")
-async def insert_item(item: ItemSchema, session=SessionDep):
+async def insert_item(item: ItemSchema, session: SessionDep):
     insert_item_from_schema(session, item)

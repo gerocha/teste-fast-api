@@ -6,6 +6,7 @@ item_table = Table(
         metadata,
         Column("id", Integer, primary_key=True),
         Column("name", String),
+        Column("description", String),
         Column("price", Numeric(precision=10, scale=2)),
         Column("quantity_in_stock", Integer),
         )
