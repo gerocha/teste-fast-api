@@ -5,9 +5,7 @@ from stock.repository.item import insert_item_from_schema
 from stock.schemas.item import ItemSchema
 
 
-router = APIRouter(
-        prefix="/items"
-        )
+router = APIRouter(prefix="/items")
 
 
 @router.post("/")

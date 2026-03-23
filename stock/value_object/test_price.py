@@ -1,12 +1,15 @@
 from stock.value_object.price import Price
 
+
 class Anom:
     price = Price()
+
 
 def test_price_instance():
     obj1 = Anom()
     obj1.price = 100.0
     assert obj1.price == 100.0
+
 
 def test_price_negative_value():
     obj2 = Anom()

@@ -12,4 +12,5 @@ def get_connection():
     finally:
         db.close()
 
+
 SessionDep = Annotated[Session, Depends(get_connection)]

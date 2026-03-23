@@ -2,6 +2,7 @@ from dataclasses import dataclass
 
 from stock.value_object.price import Price
 
+
 @dataclass
 class Item:
     name: str
@@ -26,8 +27,5 @@ class Item:
             raise ValueError("Cannot subtract more than available stock.")
 
         return Item(
-                self.name,
-                self.description,
-                self.price,
-                self.quantity_in_stock - other
-            )
+            self.name, self.description, self.price, self.quantity_in_stock - other
+        )
