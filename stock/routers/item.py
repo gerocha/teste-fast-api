@@ -9,7 +9,7 @@ from stock.services.logger import logger
 router = APIRouter(prefix="/items")
 
 
-@router.post("/")
+@router.post("/", status_code=201)
 async def insert_item(item: ItemSchema, session: SessionDep):
     logger.info("Inserting new item")
     insert_item_from_schema(session, item)
